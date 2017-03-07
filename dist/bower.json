@@ -1,0 +1,22 @@
+{
+  "name": "marker markers",
+  "authors": [
+    "cristians bregante tintaya <cristians159@gmail.com>"
+  ],
+  "description": "marcadores relacionados a un marcador, consumidos desde una ws",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "1.5.9",
+    "ngmap": "^1.17.8"
+  }
+}

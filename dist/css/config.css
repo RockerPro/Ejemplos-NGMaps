@@ -1,0 +1,83 @@
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#map {
+    position:absolute;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.labels {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center; 
+}
+.trafico{
+          position:absolute;
+          font-size:1.2em;
+          padding:0.15em;
+          right:270px;
+          z-index:2;
+          color:white;
+          border:1px solid white;
+          font-family:arial;
+          background-color:#58B2D2;
+}
+
+.nuevo{
+          position:absolute;
+          font-size:1.2em;
+          padding:0.15em;
+          right:170px;
+          z-index:2;
+          color:white;
+          border:1px solid white;
+          font-family:arial;
+          background-color:#58B2D2;
+          cursor: pointer;
+          text-decoration: none;
+}
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#status {
+  text-align: center;
+      font-size: 19.1px;
+    font-family: monospace;
+  width: 219px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(../images/loading.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+/*
+#view2{
+  display: none;
+}*/
