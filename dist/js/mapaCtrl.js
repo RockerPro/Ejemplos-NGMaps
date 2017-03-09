@@ -20,7 +20,7 @@
 	    	$scope.load = true;
 
 	    	/* --trafficLayers*/
-	    	console.log(NgMap.getMap(map));
+	    /*	console.log(NgMap.getMap(map));*/
 
 	    	NgMap.getMap().then(function(map) {
 			    $scope.map = map;
@@ -61,7 +61,7 @@
 	       		$scope.select = servicio;	
 	       		$scope.map.showInfoWindow('foo', 'servicio-'+$scope.select.item);
 	       	}
-
+/*
 	       
 	        $scope.traficos = function() {
 			    if (document.getElementById('trafico').checked == true) {
@@ -72,6 +72,6 @@
 			        trafficLayers.setMap(null);
 			        document.all('trafics').style.backgroundColor = '#58B2D2';
 			    }
-			}
+			}*/
 
 	    });
