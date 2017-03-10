@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="dist/css/config.css">
+	<link rel="stylesheet" href="dist/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+		.cont-info{
+			width: 440px;
+			min-height: 100px;
+    		overflow: hidden;
+		}
+		/*.direc{
+			width: 250px;
+			overflow: hidden;
+		}
+		.fotost{
+	
+		}*/
+	</style>
+</head>
+<body ng-app="app" ng-controller="mapaCtrl">
+
+	<div id="preloader" ng-if="load == true">
+	  <div id="status">&nbsp; Construyendo Mapa</div>
+	</div>
+
+	<ng-map id="map" zoom="{{zoom_map}}" center="{{pos_map}}">
+        <marker  ng-repeat="servicio in servicios track by servicio.nreserva" 
+        			 	position="[{{ servicio.latitude }}, {{ servicio.longitude }}]" 
+        			 	title="{{ servicio.direccion }}"
+        			 	id="{{servicio.nreserva}}"
+        			 	on-click="showDetail(servicio)"
+        			 	icon="dist/images/mapa2/{{servicio.orden}}.png">
+        </marker >
+
+      	<info-window id="foo">
+	      <div ng-non-bindable="">
+	      	<div class="cont-info">
+      			<div class="col-md-6" style="padding-right: 0px;padding-left: 0px;">
+      				<img style="margin-top: 30px;" ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I" alt="">
+      			</div>
+      			<div class="col-md-6" style="padding-left: 0px;padding-right: 0px;">
+      				<p class="direc"><strong>N° de Reserva: </strong>{{ select.nreserva }}</p>
+	      			<p class="direc"><strong>Distrito: </strong>{{ select.deszonificacion }}</p>
+	      			<p class="direc"><strong>Dirección: </strong>{{ select.direccion }}</p>
+	      			<p class="direc"><strong>Fecha: </strong>{{ select.fecreg }}</p>
+	      			<p class="direc"><strong>Hora: </strong>{{ select.horreg }}</p>
+	      			<p class="direc"><strong>Agente de Registro: </strong>{{ select.idusuario }}</p>
+	      		</div>
+	      	</div>
+	      </div>
+	    </info-window>
+	</ng-map>
+	<div id="estados" class="estados">
+		<h3>Búsqueda</h3>
+		<div id="sec2">
+			<div>
+				<form role="form" name="fsearch" ng-submit="search()">
+					<label for="nreserva" class="w-100">N° de Reserva</label><br>
+					<input type="text" name="nreserva" id="nreserva" ng-model="nreserva" required
+						 style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+					<button type="submit" class="c-pointer" ng-disabled="fsearch.$invalid" >
+						<i class="fa fa-search"></i>
+					</button>
+					<br>
+					<span id="msg-error">N° de Reserva no encontrado </span>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=-12.0967544171145,-77.050394717791" alt=""> -->
+	<!-- <a href="/" class="nuevo" style="background-color: rgb(88, 178, 210);" >
+		Nuevo
+	</a> -->
+	<!-- <label id="trafics" class="trafico" style="background-color: rgb(88, 178, 210);"><input type="checkbox" id="trafico" ng-click="traficos()">Trafico</label>
+ -->
+
+	<script src="dist/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I&libraries=places"></script>
+	<script src="dist/bower_components/angular/angular.min.js"></script>
+    <script src="dist/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+	<script src="dist/js/mapa2Ctrl.js"></script>
+</body>
+</html>

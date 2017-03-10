@@ -81,3 +81,76 @@ body {
 #view2{
   display: none;
 }*/
+
+
+/*mapa2*/
+
+.estados{
+  max-height: 600px;
+  overflow-y: scroll;
+  position:absolute;
+  font-size:1.2em;
+  padding:0.15em;
+  right:0px;
+  z-index:2;
+  color:black;
+  border:1px solid white;
+  font-family:arial;
+  background-color:white;
+  border: 1px solid silver;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+              0 1px 1px 0 rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.estados h3{
+      margin:10px;
+      border-bottom: 1px solid silver;
+        padding-bottom: 5px;
+    }
+    .estados div{
+      padding: 5px;
+    }
+    .estados div label{
+      cursor: pointer;
+    }
+
+    
+    .search{
+            position:absolute;
+            font-size:1.2em;
+            padding:0.15em;
+            right:0px;
+            z-index:2;
+            color:black;
+            border:1px solid white;
+            font-family:arial;
+            background-color:white;
+            border: 1px solid silver;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+              0 1px 1px 0 rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+    }
+    .search h3{
+      margin:10px;
+      border-bottom: 1px solid silver;
+        padding-bottom: 5px;
+    }
+
+    .c-pointer{
+      cursor: pointer;
+    }
+
+    button:disabled{
+      cursor: not-allowed !important;
+    }
+
+    #msg-error{
+      display: none;
+      color:red;
+      font-size: 12px;
+    }
+
+    .w-100{
+      width: 100%
+    }
