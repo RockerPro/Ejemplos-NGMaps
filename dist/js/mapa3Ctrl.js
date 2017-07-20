@@ -20,6 +20,8 @@ app.controller('mapaCtrl', function($scope, $http,NgMap)
 	
  
 	$scope.load = true;
+  $scope.show_traffic = false;
+  var trafficLayers = new google.maps.TrafficLayer();
 
 
 	NgMap.getMap().then(function(map) {
@@ -61,5 +63,13 @@ app.controller('mapaCtrl', function($scope, $http,NgMap)
    		$scope.select = servicio;	
    		$scope.map.showInfoWindow('foo', 'servicio-'+$scope.select.item);
    	}
+
+    $scope.traficos = function() {
+        if ($scope.show_traffic == true) {
+          trafficLayers.setMap($scope.map);
+        }else if ($scope.show_traffic == false) {
+          trafficLayers.setMap(null);
+        }
+    }
 
 });

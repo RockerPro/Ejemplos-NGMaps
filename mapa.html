@@ -8,13 +8,6 @@
 		.cont-info{
 			width: 250px;
 		}
-		/*.direc{
-			width: 250px;
-			overflow: hidden;
-		}
-		.fotost{
-	
-		}*/
 	</style>
 </head>
 <body ng-app="app" ng-controller="mapaCtrl">
@@ -44,7 +37,7 @@
 	      		</div>
 	      		<div class="col-md-12">
 	      			<div class="col-md-10" style="text-align: center;">
-	      				<img ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I" alt="">
+	      				<img ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ" alt="">
 	      			</div>
 	      		</div>
 	      	</div>
@@ -52,31 +45,17 @@
 	    </info-window>
 	    <!-- <traffic-layer ></traffic-layer> -->
 	</ng-map>
-	<!-- <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=-12.0967544171145,-77.050394717791" alt=""> -->
-	<!-- <a href="/" class="nuevo" style="background-color: rgb(88, 178, 210);" >
-		Nuevo
-	</a> -->
-	<!-- <label id="trafics" class="trafico" style="background-color: rgb(88, 178, 210);"><input type="checkbox" id="trafico" ng-click="traficos()">Trafico</label>
- -->
+	<div id="box_traffic" class="box_traffic">
+		<label for="input_traffic">Tráfico</label>
+		<input type="checkbox" ng-model="show_traffic" id="input_traffic" name="input_traffic" ng-change="traficos()">
+	</div>
+
 
 	<script src="dist/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I&libraries=places"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ&libraries=places"></script>
 	<script src="dist/bower_components/angular/angular.min.js"></script>
     <script src="dist/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
 	<script src="dist/js/mapa1Ctrl.js"></script>
-	<script>
-		/*var map = new google.maps.Map(document.getElementById("map"), {			    });*/
-	/*function traficos() {	1
-	    if (document.getElementById('trafico').checked == true) {
-	        trafficLayer.setMap(map);
-	        document.all('trafics').style.backgroundColor = '#FF6633';
-	    }
-	    else {
-	        trafficLayer.setMap(null);
-	        document.all('trafics').style.backgroundColor = '#58B2D2';
-	    }
-	}*/
-	</script>
 </body>
 </html>

@@ -154,3 +154,84 @@ body {
     .w-100{
       width: 100%
     }
+
+/* mapa pgsql */
+
+
+.moviles{
+  width: 400px;
+  overflow: hidden;
+  position:absolute;
+  font-size:1.2em;
+  right:0px;
+  z-index:2;
+  color:black;
+  border:1px solid white;
+  font-family:arial;
+  background-color:white;
+  border: 1px solid silver;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+              0 1px 1px 0 rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.moviles h3{
+  padding: 5px;
+    -webkit-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+}
+
+.cont-moviles{
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 5px;
+}
+
+.movil{
+  width: 100%;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid silver;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.movil div label{
+    width: 100%;
+    font-size: 11px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.label-t{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.box_traffic{
+      position:absolute;
+      font-size:1.2em;
+      padding:0.5em;
+      right:0px;
+      z-index:2;
+      color:black;
+      border:1px solid white;
+      font-family:arial;
+      background-color:white;
+      border: 1px solid silver;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+                  0 1px 1px 0 rgba(0,0,0,.14),
+                  0 2px 1px -1px rgba(0,0,0,.12);
+    }
+    .box_traffic label{
+      font-weight: bold;
+      cursor: pointer;
+      float: left;
+      margin: 0px;
+    }
+    .box_traffic input{
+      margin-top: 5px;
+      margin-left: 10px;
+    }

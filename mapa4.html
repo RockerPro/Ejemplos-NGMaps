@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="dist/css/config.css">
+	<style>
+		.cont-info{
+			width: 250px;
+		}
+		/*.direc{
+			width: 250px;
+			overflow: hidden;
+		}
+		.fotost{
+	
+		}*/
+	</style>
+</head>
+<body ng-app="app" ng-controller="mapaCtrl">
+
+	<div id="preloader" ng-if="load == true">
+	  <div id="status">&nbsp; Construyendo Mapa</div>
+	</div>
+
+	<ng-map id="map" zoom="18" center="[{{ data.latitude }}, {{ data.longitude }}]">
+		<marker position="[{{ data.latitude }}, {{ data.longitude }}]" title="movil"
+      			icon="dist/images/10.png">
+        </marker>
+ 
+	</ng-map>
+	<div id="box_traffic" class="box_traffic">
+		<label for="input_traffic">Tráfico</label>
+		<input type="checkbox" ng-model="show_traffic" id="input_traffic" name="input_traffic" ng-change="traficos()">
+	</div>
+
+	<script src="dist/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ&libraries=places"></script>
+	<script src="dist/bower_components/angular/angular.min.js"></script>
+    <script src="dist/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+	<script src="dist/js/mapa4Ctrl.js"></script>
+
+</body>
+</html>

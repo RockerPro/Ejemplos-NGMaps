@@ -44,18 +44,22 @@
 	      		</div>
 	      		<div class="col-md-12">
 	      			<div class="col-md-10" style="text-align: center;">
-	      				<img ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I" alt="">
+	      				<img ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ" alt="">
 	      			</div>
 	      		</div>
 	      	</div>
 	      </div>
 	    </info-window>
 	</ng-map>
+	<div id="box_traffic" class="box_traffic">
+		<label for="input_traffic">Tráfico</label>
+		<input type="checkbox" ng-model="show_traffic" id="input_traffic" name="input_traffic" ng-change="traficos()">
+	</div>
 
 
 	<script src="dist/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I&libraries=places"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ&libraries=places"></script>
 	<script src="dist/bower_components/angular/angular.min.js"></script>
     <script src="dist/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
 	<script src="dist/js/mapa3Ctrl.js"></script>

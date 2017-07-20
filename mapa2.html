@@ -40,7 +40,7 @@
 	      <div ng-non-bindable="">
 	      	<div class="cont-info">
       			<div class="col-md-6" style="padding-right: 0px;padding-left: 0px;">
-      				<img style="margin-top: 30px;" ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I" alt="">
+      				<img style="margin-top: 30px;" ng-src="https://maps.googleapis.com/maps/api/streetview?size=200x100&location={{ select.latitude }},{{ select.longitude }}&heading=151.78&pitch=-0.76&key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ" alt="">
       			</div>
       			<div class="col-md-6" style="padding-left: 0px;padding-right: 0px;">
       				<p class="direc"><strong>N° de Reserva: </strong>{{ select.nreserva }}</p>
@@ -53,6 +53,7 @@
 	      	</div>
 	      </div>
 	    </info-window>
+	    <traffic-layer ng-if="show_traffic == true "></traffic-layer> 
 	</ng-map>
 	<div id="estados" class="estados">
 		<h3>Búsqueda</h3>
@@ -80,7 +81,7 @@
 
 	<script src="dist/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="dist/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn2kY7DAKnKQrBfr5NUVs0lyXN30xVP-I&libraries=places"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlCN0dbGrDRimNx608jQRuev489AeW8jQ&libraries=places"></script>
 	<script src="dist/bower_components/angular/angular.min.js"></script>
     <script src="dist/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
 	<script src="dist/js/mapa2Ctrl.js"></script>
