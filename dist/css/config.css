@@ -211,27 +211,54 @@ body {
 
 
 .box_traffic{
-      position:absolute;
-      font-size:1.2em;
-      padding:0.5em;
-      right:0px;
-      z-index:2;
-      color:black;
-      border:1px solid white;
-      font-family:arial;
-      background-color:white;
-      border: 1px solid silver;
-      box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
-                  0 1px 1px 0 rgba(0,0,0,.14),
-                  0 2px 1px -1px rgba(0,0,0,.12);
-    }
-    .box_traffic label{
-      font-weight: bold;
-      cursor: pointer;
-      float: left;
-      margin: 0px;
-    }
-    .box_traffic input{
-      margin-top: 5px;
-      margin-left: 10px;
-    }
+  position:absolute;
+  font-size:1.2em;
+  padding:0.5em;
+  right:0px;
+  z-index:2;
+  color:black;
+  border:1px solid white;
+  font-family:arial;
+  background-color:white;
+  border: 1px solid silver;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+              0 1px 1px 0 rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+}
+.box_traffic label{
+  font-weight: bold;
+  cursor: pointer;
+  float: left;
+  margin: 0px;
+}
+.box_traffic input{
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+
+.box_radio{
+  position:absolute;
+  font-size:1.2em;
+  padding:0.5em;
+  right:110px;
+  z-index:2;
+  color:black;
+  border:1px solid white;
+  font-family:arial;
+  background-color:white;
+  border: 1px solid silver;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),
+              0 1px 1px 0 rgba(0,0,0,.14),
+              0 2px 1px -1px rgba(0,0,0,.12);
+}
+.box_radio label{
+  font-weight: bold;
+  cursor: pointer;
+  float: left;
+  margin: 0px;
+}
+.box_radio input{
+  margin-top: 5px;
+  margin-left: 10px;
+}

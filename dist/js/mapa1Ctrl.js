@@ -19,14 +19,23 @@ app.controller('mapaCtrl', function($scope, $http,NgMap)
  
 	$scope.load = true;
 	$scope.show_traffic = false;
+  $scope.radio_number = 2000;
 	var trafficLayers = new google.maps.TrafficLayer();
-
+  var circle = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    editable:true,
+    draggable: false,
+    map: $scope.map,
+    radius: $scope.radio_number
+  });
 
 	NgMap.getMap().then(function(map) {
 	    $scope.map = map;
-	    console.log($scope.map);
-	    
-   		
+	    console.log($scope.map);   		
 	});
 
 
@@ -55,7 +64,6 @@ app.controller('mapaCtrl', function($scope, $http,NgMap)
    	window.setInterval(function(){
     	$scope.loadCar();
     	console.log($scope.map);
-    	console.log($scope.map.center.toJSON());
     }, 5000); 
 
    	$scope.showDetail = function(e, servicio){
@@ -64,12 +72,53 @@ app.controller('mapaCtrl', function($scope, $http,NgMap)
    		$scope.map.showInfoWindow('foo', 'servicio-'+$scope.select.item);
    	}
 
+    
+
     $scope.traficos = function() {
-    	if ($scope.show_traffic == true) {
-    		trafficLayers.setMap($scope.map);
-    	}else if ($scope.show_traffic == false) {
-    		trafficLayers.setMap(null);
-    	}
-	}
+      	if ($scope.show_traffic == true) {
+      		trafficLayers.setMap($scope.map);
+      	}else if ($scope.show_traffic == false) {
+      		trafficLayers.setMap(null);
+      	} 
+  	}
+
+    $scope.radio = function(data) {
+        console.log(data);
+        if ($scope.show_radio == true) {
+          if (data == undefined) {
+            circle.setOptions({
+              center: $scope.map.center
+            });
+            circle.setMap($scope.map);
+          }else{
+            circle.setOptions({
+              center: {
+                lat: parseFloat(data.Latitude),
+                lng: parseFloat(data.Longitude)
+              }
+            });
+            circle.setMap($scope.map);
+            console.log(circle.getRadius());
+          }
+        }else if ($scope.show_radio == false) {
+          circle.setMap(null);
+        }        
+    }
+
+    google.maps.event.addListener(circle, 'radius_changed', function() {
+      $scope.radio_number = circle.getRadius().toFixed(2);
+      console.log(circle.getRadius());
+      $scope.$apply();
+    });
+
+
+    /*$scope.moveCicle = function(data){
+      circle.setOptions({
+        center: {
+          lat: parseFloat(data.Latitude),
+          lng: parseFloat(data.Longitude)
+        }
+      });
+    }*/
 
 });

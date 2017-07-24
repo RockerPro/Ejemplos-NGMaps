@@ -43,11 +43,15 @@
 	      	</div>
 	      </div>
 	    </info-window>
-	    <!-- <traffic-layer ></traffic-layer> -->
+
 	</ng-map>
 	<div id="box_traffic" class="box_traffic">
 		<label for="input_traffic">Tráfico</label>
 		<input type="checkbox" ng-model="show_traffic" id="input_traffic" name="input_traffic" ng-change="traficos()">
+	</div>
+	<div id="box_radio" class="box_radio">
+		<label for="input_radio">Radio: <div ng-if="show_radio == true" style="float: right;margin-left: 5px;">{{ radio_number }}m</div></label>
+		<input type="checkbox" ng-model="show_radio" id="input_radio" name="input_radio" ng-change="radio(data)">
 	</div>
 
 
